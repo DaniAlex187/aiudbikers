@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+// This file is used to configure the TypeScript compiler options for the project.
+// It references two other configuration files: tsconfig.app.json and tsconfig.node.json.
