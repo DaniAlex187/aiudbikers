@@ -1,12 +1,57 @@
-# React + Vite
+This is a fullstack website for the AIUD BIKERS club, built with React (frontend) and Node.js/Express (backend), using MongoDB for data storage.
+This project doesn't have a domain. It is just for testing
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Frontend
+- Framework: React + Vite + TypeScript
+- Styling: Tailwind CSS for fast, responsive design
+- Effects/Animations:
+Used Tailwind’s transition and animation utilities for smooth UI effects.
+Custom animations for buttons, hover states, and section transitions.
+- Map Component:
+Interactive map with mouse zoom and pan.
+Users can explore the club’s location visually.
+- Components:
+Navbar and Footer for layout
+Hero, About, Events, Location, Contact sections
+Logo and Map UI components
+Forms for contact and newsletter subscription
 
-Currently, two official plugins are available:
+# Backend
+- Framework: Node.js + Express
+- Database: MongoDB (with Mongoose)
+- Features:
+- API endpoints for contact form and newsletter subscription
+- Stores submissions in MongoDB
+- Sends emails using Nodemailer (configurable SMTP)
+Structure:
+All backend code is in the server folder
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How It Works
+The frontend sends form data to the backend via HTTP POST requests.
+The backend validates, stores, and (optionally) emails the data.
+All submissions are viewable in MongoDB Compass.
 
-## Expanding the ESLint configuration
+# Running Locally
+1 - Start MongoDB server
+(e.g., run mongod in a terminal)
+2 - Start backend
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# commands: 
+
+cd server
+node index.js
+
+3 - Start frontend
+
+commands:
+
+npm run dev
+
+4 - Open the site in the browser
+http://localhost:5173
+
+# Customization
+- Any component can be edited in the src/components folder.
+- Map settings and effects can be tweaked in the Map component.
+- Backend endpoints can be extended for more features.
+
