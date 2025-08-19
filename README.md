@@ -17,6 +17,13 @@ Logo and Map UI components
 Forms for contact and newsletter subscription
 
 # Backend
+In the project root:
+
+mkdir server
+cd server
+npm init -y
+npm install express cors nodemailer
+
 - Framework: Node.js + Express
 - Database: MongoDB (with Mongoose)
 - Features:
@@ -25,6 +32,40 @@ Forms for contact and newsletter subscription
 - Sends emails using Nodemailer (configurable SMTP)
 Structure:
 All backend code is in the server folder
+
+Adding MongoDB to this project so it can be store and view all messages and newsletter subscription:
+- npm install mongoose
+
+Creating new file: server/models.js
+
+- the code:
+const mongoose = require('mongoose');
+---------------------------------------
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+  date: { type: Date, default: Date.now }
+});
+
+const newsletterSchema = new mongoose.Schema({
+  email: String,
+  date: { type: Date, default: Date.now }
+});
+
+const Contact = mongoose.model('Contact', contactSchema);
+const Newsletter = mongoose.model('Newsletter', newsletterSchema);
+
+module.exports = { Contact, Newsletter };
+---------------------------------------
+
+Connect to MongoDB in the Server
+At the top of index.js
+---------------------------------------
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/aiudbikers', { useNewUrlParser: true, useUnifiedTopology: true });
+---------------------------------------
+
 
 # How It Works
 The frontend sends form data to the backend via HTTP POST requests.

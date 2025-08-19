@@ -34,15 +34,4 @@ app.post('/api/subscribe', async (req, res) => {
   }
 });
 
-// Newsletter subscribe endpoint
-app.post('/api/subscribe', async (req, res) => {
-  const { email } = req.body;
-  try {
-    await Newsletter.create({ email });
-    res.json({ success: true });
-  } catch (error) {
-    res.status(500).json({ success: false, error: error.message });
-  }
-});
-
 app.listen(5000, () => console.log('Server running on port 5000'));
