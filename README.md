@@ -39,8 +39,10 @@ Adding MongoDB to this project so it can be store and view all messages and news
 Creating new file: server/models.js
 
 - the code:
-const mongoose = require('mongoose');
+-
 ---------------------------------------
+const mongoose = require('mongoose');
+
 const contactSchema = new mongoose.Schema({
   name: String,
   email: String,
